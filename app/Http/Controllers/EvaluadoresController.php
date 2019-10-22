@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class EvaluadoresController extends Controller
 {
@@ -13,7 +14,8 @@ class EvaluadoresController extends Controller
      */
     public function index()
     {
-        return view('evaluadores.evaluadores');
+        $evaluadores = DB::table('evaluadores')->get();
+        return view('evaluadores.index',['evaluadores'=>$evaluadores]);
     }
 
     /**

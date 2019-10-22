@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class ProyectosController extends Controller
 {
@@ -13,7 +14,8 @@ class ProyectosController extends Controller
      */
     public function index()
     {
-        return view('proyectos.proyectos');
+        $proyectos = DB::table('proyectos')->get();
+        return view('proyectos.index',['proyectos'=>$proyectos]);
     }
 
     /**
