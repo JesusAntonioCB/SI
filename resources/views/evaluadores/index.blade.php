@@ -14,19 +14,18 @@
                 <tr>
                   <th>Evaluador</th>
                   <th>Especialidad</th>
-                  <th>Creado</th>
-                  <th>Actualizado</th>
+                  <th>Opciones</th>
                 </tr>
               </thead>
               <tbody>
                 @foreach($evaluadores as $evaluador)
                 <tr>
-                  <td>{{$evaluador->nombres}}</td>
+                  <td>{{$evaluador->nombres}} {{$evaluador->ap_paterno}} {{$evaluador->ap_materno}}</td>
                   <td>{{$evaluador->especialidad}}</td>
-                  <td>{{$evaluador->created_at}}</td>
-                  <td>{{$evaluador->updated_at}}</td>
-                  <td> <button class="btn btn-primary btn-circle"> <i class="material-icons">Create</i></button></td>
-                  <td> <button class="btn btn-primary btn-circle"> <i class="material-icons">Delete</i></button></td>
+                  <td>
+                    <button class="btn btn-primary btn-circle"> <i class="material-icons">Create</i></button>
+                    <button class="btn btn-primary btn-circle"> <i class="material-icons">Delete</i></button>
+                  </td>
                 </tr>
                 @endforeach
               </tbody>

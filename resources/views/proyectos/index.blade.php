@@ -15,16 +15,21 @@
                   <th>Proyecto</th>
                   <th>Descripcion</th>
                   <th>Promedio</th>
-                  <th>Estado</th>
+                  <th>Fecha</th>
+                  <th>horario</th>
+                  <th>memoria</th>
                   <th>Opciones</th>
                 </tr>
               </thead>
               <tbody>
-                @foreach($grupos as $grupo)
+                @foreach($proyectos as $proyecto)
                 <tr>
-                  <td>{{$grupo->grupos}}</td>
-                  <td>{{$grupo->turno}}</td>
-                  <td>{{$grupo->estado}}</td>
+                  <td>{{$proyecto->nombre_proyecto}}</td>
+                  <td>{{$proyecto->descripcion}}</td>
+                  <td>{{$proyecto->promedio}}</td>
+                  <td>{{$proyecto->fecha}}</td>
+                  <td>{{$proyecto->horario_expo}}</td>
+                  <td>{{$proyecto->memoria}}</td>
                   <td>
                     <button class="btn btn-primary btn-circle"> <i class="material-icons">Create</i></button>
                     <button class="btn btn-primary btn-circle"> <i class="material-icons">Delete</i></button>

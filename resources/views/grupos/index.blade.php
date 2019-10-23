@@ -2,7 +2,7 @@
 @section('contenido')
     <div class="card">
       <div class="header">
-        <h2>Listado de grupos</h2>
+        <h2>Listado de Grupos</h2>
       </div>
     </div>
     <div class="row">
