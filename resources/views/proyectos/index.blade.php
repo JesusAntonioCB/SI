@@ -2,7 +2,7 @@
 @section('contenido')
     <div class="card">
       <div class="header">
-        <h2>Listado de Proyectos</h2>
+        <h2>Listado de Proyectos<button class="btn btn-success btn-circle"> <i class="material-icons">add</i></button></h2>
       </div>
     </div>
     <div class="row">
@@ -31,8 +31,8 @@
                   <td>{{$proyecto->horario_expo}}</td>
                   <td>{{$proyecto->memoria}}</td>
                   <td>
-                    <button class="btn btn-primary btn-circle"> <i class="material-icons">Create</i></button>
-                    <button class="btn btn-primary btn-circle"> <i class="material-icons">Delete</i></button>
+                    <button class="btn btn-primary btn-circle"> <i class="material-icons">Update</i></button>
+                    <button class="btn btn-danger btn-circle"> <i class="material-icons">Delete</i></button>
                   </td>
                 </tr>
                 @endforeach

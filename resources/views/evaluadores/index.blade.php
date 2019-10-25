@@ -2,7 +2,7 @@
 @section('contenido')
     <div class="card">
       <div class="header">
-        <h2>Listado de Evaluadores</h2>
+        <h2>Listado de Evaluadores<button class="btn btn-success btn-circle"> <i class="material-icons">add</i></button></h2>
       </div>
     </div>
     <div class="row">
@@ -24,7 +24,7 @@
                   <td>{{$evaluador->especialidad}}</td>
                   <td>
                     <button class="btn btn-primary btn-circle"> <i class="material-icons">Create</i></button>
-                    <button class="btn btn-primary btn-circle"> <i class="material-icons">Delete</i></button>
+                    <button class="btn btn-danger btn-circle"> <i class="material-icons">Delete</i></button>
                   </td>
                 </tr>
                 @endforeach
