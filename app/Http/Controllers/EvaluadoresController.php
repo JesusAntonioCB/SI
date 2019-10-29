@@ -25,7 +25,7 @@ class EvaluadoresController extends Controller
      */
     public function create()
     {
-        //
+        return view('evaluadores.create');
     }
 
     /**

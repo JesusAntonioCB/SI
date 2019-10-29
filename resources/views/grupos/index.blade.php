@@ -2,7 +2,11 @@
 @section('contenido')
     <div class="card">
       <div class="header">
-        <h2>Listado de Grupos<button class="btn btn-success btn-circle"> <i class="material-icons">add</i></button></h2>
+        <h2>Listado de Grupos
+          <button class="btn btn-success btn-circle">
+            <a href="/Grupos/create"> <i class="material-icons">add</i></a>
+          </button>
+        </h2>
       </div>
     </div>
     <div class="row">

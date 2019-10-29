@@ -25,7 +25,7 @@ class ProyectosController extends Controller
      */
     public function create()
     {
-        //
+        return view('proyectos.create');
     }
 
     /**

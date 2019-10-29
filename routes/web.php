@@ -18,7 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/Evaluadores', 'EvaluadoresController@index')->name('Evaluadores');
-Route::get('/Grupos', 'GruposController@index')->name('Grupos');
-Route::get('/Proyectos', 'ProyectosController@index')->name('Proyectos');
-Route::get('/Salones', 'SalonesController@index')->name('Salones');
+Route::resource('/Evaluadores', 'EvaluadoresController');
+Route::resource('/Grupos', 'GruposController');
+Route::resource('/Proyectos', 'ProyectosController');
+Route::resource('/Salones', 'SalonesController');

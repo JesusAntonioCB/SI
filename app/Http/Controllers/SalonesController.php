@@ -25,7 +25,7 @@ class SalonesController extends Controller
      */
     public function create()
     {
-        //
+        return view('salones.create');
     }
 
     /**
