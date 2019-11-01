@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-
+use Redirect;
+use App\Grupo;
 class GruposController extends Controller
 {
     /**
@@ -34,9 +35,14 @@ class GruposController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request){
+      $grupos = new Grupo;
+      $grupos->grupos = $request->get('ngrupo');
+      $grupos->turno = $request->get('turno');
+      $grupos->estado = "Activo";
+      $grupos->save();
+      return Redirect::to('Grupos');
+
     }
 
     /**
@@ -81,6 +87,12 @@ class GruposController extends Controller
      */
     public function destroy($id)
     {
-        //
+      // delete
+       $nerd = Grupo::find($id);
+       $nerd->delete();
+
+       // redirect
+       Session::flash('message', 'Successfully deleted the nerd!');
+       return Redirect::to('Grupos');
     }
 }

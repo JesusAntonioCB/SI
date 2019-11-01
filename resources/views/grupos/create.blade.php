@@ -17,13 +17,13 @@
         <div class="form-goup">
           <div class="form-line">
             <label>Nombre del Grupo</label>
-            <input id="nevaluador" class="form-group" type="text" name="Grupo" placeholder="Nombre del Grupo" value="">
+            <input class="form-group" type="text" name="ngrupo" placeholder="Nombre del Grupo">
           </div>
           <div class="form-line">
             <label>Turno</label>
-            <select class="form-control" name="">
-              <option value="-1">Turno Nocturno</option>
-              <option value="">Turno Matutino</option>
+            <select class="form-control"  name="turno">
+              <option value="Nocturno">Turno Nocturno</option>
+              <option value="Matutino">Turno Matutino</option>
             </select>
           </div>
           <div class="form-line">

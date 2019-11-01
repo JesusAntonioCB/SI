@@ -30,6 +30,10 @@
                   <td>{{$grupo->estado}}</td>
                   <td>
                      <button class="btn btn-primary btn-circle"> <i class="material-icons">Create</i></button>
+                     {{ Form::open(array('url' => 'grupos/' . $grupo->id, 'class' => 'pull-right')) }}
+                        {{ Form::hidden('_method', 'DELETE') }}
+                        {{ Form::submit('Delete this Nerd', array('class' => 'btn btn-warning')) }}
+                    {{ Form::close() }}
                      <button class="btn btn-danger btn-circle"> <i class="material-icons">Delete</i></button>
                   </td>
                 </tr>

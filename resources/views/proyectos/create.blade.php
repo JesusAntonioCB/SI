@@ -20,6 +20,14 @@
             <input id="nevaluador" class="form-group" type="text" name="Proyecto" placeholder="Nombre del Proyecto" value="">
           </div>
           <div class="form-line">
+            <label>Fecha del Proyecto</label>
+            <input id="nevaluador" class="form-group" type="text" name="Proyecto" placeholder="Fecha del Proyecto" value="">
+          </div>
+          <div class="form-line">
+            <label>Fecha del Proyecto</label>
+            <input id="nevaluador" class="form-group" type="text" name="Proyecto" placeholder="Fecha del Proyecto" value="">
+          </div>
+          <div class="form-line">
             <label>Turno</label>
             <select class="form-control" name="">
               <option value="-1">Turno Nocturno</option>
