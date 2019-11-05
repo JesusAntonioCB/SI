@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-
+use Redirect;
+use App\Proyectos;
 class ProyectosController extends Controller
 {
     /**
@@ -25,7 +26,14 @@ class ProyectosController extends Controller
      */
     public function create()
     {
-        return view('proyectos.create');
+        $grupos = DB::table('grupos')->get();
+        $salones = DB::table('salones')->get();
+        $evaluadores = DB::table('evaluadores')->get();
+        return view('proyectos.create',[
+          'grupos'=>$grupos,
+          'salones'=>$salones,
+          'evaluadores'=>$evaluadores
+        ]);
     }
 
     /**
@@ -36,7 +44,18 @@ class ProyectosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $proyecto = new Proyectos;
+      $proyecto->nombre_proyecto = $request->get('nproyecto');
+      $proyecto->memoria = $request->get('memoria');
+      $proyecto->fecha = $request->get('fecha');
+      $proyecto->horario_expo = $request->get('horario');
+      $proyecto->promedio = $request->get('promedio');
+      $proyecto->descripcion = $request->get('descripcion');
+      $proyecto->idgrupo = $request->get('grupo');
+      $proyecto->idsalones = $request->get('salon');
+      $proyecto->idevaluador = $request->get('evaluador');
+      $proyecto->save();
+      return Redirect::to('Proyectos');
     }
 
     /**

@@ -35,8 +35,8 @@
                   <td>{{$proyecto->horario_expo}}</td>
                   <td>{{$proyecto->memoria}}</td>
                   <td>
-                    <button class="btn btn-primary btn-circle"> <i class="material-icons">Update</i></button>
-                    <button class="btn btn-danger btn-circle"> <i class="material-icons">Delete</i></button>
+                    <button class="btn btn-primary btn-circle"> <i class="material-icons">create</i></button>
+                    <button class="btn btn-danger btn-circle"> <i class="material-icons">delete</i></button>
                   </td>
                 </tr>
                 @endforeach

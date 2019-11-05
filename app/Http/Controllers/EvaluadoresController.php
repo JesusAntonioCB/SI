@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Redirect;
+use App\Evaluadores;
 
 class EvaluadoresController extends Controller
 {
@@ -36,7 +38,13 @@ class EvaluadoresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $Evaluador = new Evaluadores;
+      $Evaluador->nombres = $request->get('nevaluador');
+      $Evaluador->ap_paterno = $request->get('apevaluador');
+      $Evaluador->ap_materno = $request->get('amevaluador');
+      $Evaluador->especialidad = $request->get('especialidad');
+      $Evaluador->save();
+      return Redirect::to('Evaluadores');
     }
 
     /**

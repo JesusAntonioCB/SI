@@ -27,8 +27,8 @@
                   <td>{{$evaluador->nombres}} {{$evaluador->ap_paterno}} {{$evaluador->ap_materno}}</td>
                   <td>{{$evaluador->especialidad}}</td>
                   <td>
-                    <button class="btn btn-primary btn-circle"> <i class="material-icons">Create</i></button>
-                    <button class="btn btn-danger btn-circle"> <i class="material-icons">Delete</i></button>
+                    <button class="btn btn-primary btn-circle"> <i class="material-icons">create</i></button>
+                    <button class="btn btn-danger btn-circle"> <i class="material-icons">delete</i></button>
                   </td>
                 </tr>
                 @endforeach

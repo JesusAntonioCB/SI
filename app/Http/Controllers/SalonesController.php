@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-
+use Redirect;
+use App\Salones;
 class SalonesController extends Controller
 {
     /**
@@ -25,7 +26,8 @@ class SalonesController extends Controller
      */
     public function create()
     {
-        return view('salones.create');
+        $grupos = DB::table('grupos')->get();
+        return view('salones.create',['grupos'=>$grupos]);
     }
 
     /**
@@ -36,7 +38,12 @@ class SalonesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $salon = new Salones;
+      $salon->salon = $request->get('nsalon');
+      $salon->edificio = $request->get('edificio');
+      $salon->idgrupo = $request->get('grupo');
+      $salon->save();
+      return Redirect::to('Salones');
     }
 
     /**

@@ -17,26 +17,19 @@
         <div class="form-goup">
           <div class="form-line">
             <label>Nombre del Evaluador</label>
-            <input id="nevaluador" class="form-group" type="text" name="Evaluador" placeholder="Nombre del Evaluador" value="">
+            <input id="nevaluador" class="form-group" type="text" name="nevaluador" placeholder="Nombre del Evaluador" value="">
           </div>
           <div class="form-line">
             <label>Apellido Paterno del Evaluador</label>
-            <input id="nevaluador" class="form-group" type="text" name="Evaluador" placeholder="Apellido Paterno del Evaluador" value="">
+            <input id="nevaluador" class="form-group" type="text" name="apevaluador" placeholder="Apellido Paterno del Evaluador" value="">
           </div>
           <div class="form-line">
             <label>Apellido Materno del Evaluador</label>
-            <input id="nevaluador" class="form-group" type="text" name="Evaluador" placeholder="Apellido Materno del Evaluador" value="">
+            <input id="nevaluador" class="form-group" type="text" name="amevaluador" placeholder="Apellido Materno del Evaluador" value="">
           </div>
           <div class="form-line">
             <label>Especialidad del Evaluador</label>
-            <input id="nevaluador" class="form-group" type="text" name="Evaluador" placeholder="Especialidad del Evaluador" value="">
-          </div>
-          <div class="form-line">
-            <label>Turno</label>
-            <select class="form-control" name="">
-              <option value="-1">Turno Nocturno</option>
-              <option value="">Turno Matutino</option>
-            </select>
+            <input id="nevaluador" class="form-group" type="text" name="especialidad" placeholder="Especialidad del Evaluador" value="">
           </div>
           <div class="form-line">
             <button type="submit" class="btn btn-primary">Crear</button>

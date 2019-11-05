@@ -17,13 +17,18 @@
         <div class="form-goup">
           <div class="form-line">
             <label>Nombre del Salon</label>
-            <input id="nevaluador" class="form-group" type="text" name="Salon" placeholder="Nombre del Salon" value="">
+            <input id="nsalon" class="form-group" type="text" name="nsalon" placeholder="Nombre del Salon" value="">
           </div>
           <div class="form-line">
-            <label>Turno</label>
-            <select class="form-control" name="">
-              <option value="-1">Turno Nocturno</option>
-              <option value="">Turno Matutino</option>
+            <label>Nombre del Edificio</label>
+            <input class="form-group" type="text" name="edificio" placeholder="Nombre del Edificio" value="">
+          </div>
+          <div class="form-line">
+            <label>Grupo</label>
+            <select class="form-control" name="grupo">
+              @foreach($grupos as $grupo)
+                <option value="{{$grupo->id}}">{{$grupo->grupos}}</option>
+              @endforeach
             </select>
           </div>
           <div class="form-line">

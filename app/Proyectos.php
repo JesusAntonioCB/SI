@@ -14,6 +14,7 @@ class Proyectos extends Model
 
     protected $fillable = [
     	'idgrupo',
-    	'nombre_proyecto'
+    	'nombre_proyecto',
+    	'idevaluador'
     ];
 }
