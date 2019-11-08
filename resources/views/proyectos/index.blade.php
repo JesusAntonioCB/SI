@@ -19,6 +19,9 @@
                   <th>Proyecto</th>
                   <th>Descripcion</th>
                   <th>Promedio</th>
+                  <th>Grupos</th>
+                  <th>Salon</th>
+                  <th>Evaluador</th>
                   <th>Fecha</th>
                   <th>horario</th>
                   <th>memoria</th>
@@ -26,11 +29,15 @@
                 </tr>
               </thead>
               <tbody>
+                {{dd($proyectos)}}
                 @foreach($proyectos as $proyecto)
                 <tr>
                   <td>{{$proyecto->nombre_proyecto}}</td>
                   <td>{{$proyecto->descripcion}}</td>
                   <td>{{$proyecto->promedio}}</td>
+                  <td>{{$proyecto->grupos}}</td>
+                  <td>{{$proyecto->salon}}</td>
+                  <td>{{$proyecto->nombres}}</td>
                   <td>{{$proyecto->fecha}}</td>
                   <td>{{$proyecto->horario_expo}}</td>
                   <td>{{$proyecto->memoria}}</td>

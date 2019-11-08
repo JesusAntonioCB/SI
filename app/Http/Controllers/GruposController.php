@@ -40,6 +40,8 @@ class GruposController extends Controller
       $grupos->grupos = $request->get('ngrupo');
       $grupos->turno = $request->get('turno');
       $grupos->estado = "Activo";
+      // $dt = date('Y-m-d H:i:s');
+      // $grupos->created_at =$dt;
       $grupos->save();
       return Redirect::to('Grupos');
 

@@ -15,6 +15,7 @@ class Grupo extends Model
     protected $fillable = [
     	'grupo',
     	'turno',
-    	'idproyecto'
+    	'idproyecto',
+      'created_at'
     ];
 }

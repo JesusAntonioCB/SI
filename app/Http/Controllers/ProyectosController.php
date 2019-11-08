@@ -15,10 +15,17 @@ class ProyectosController extends Controller
      */
     public function index()
     {
-        $proyectos = DB::table('proyectos')->get();
+        $proyectos = DB::table('proyectos')
+        // ->leftJoin('grupos', 'grupos.id', '=', 'proyectos.idgrupo')
+        // ->leftJoin('salones', 'salones.id', '=', 'proyectos.idsalones')
+        // ->leftJoin('evaluadores', 'evaluadores.id', '=', 'proyectos.idevaluador')
+        // ->get();
+        ->join('grupos', 'proyectos.idgrupo', '=', 'grupos.id')
+        ->select('proyectos.*','grupos.grupos','grupos.turno')
+        ->get();
         return view('proyectos.index',['proyectos'=>$proyectos]);
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
