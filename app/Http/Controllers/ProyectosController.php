@@ -21,11 +21,13 @@ class ProyectosController extends Controller
         // ->leftJoin('evaluadores', 'evaluadores.id', '=', 'proyectos.idevaluador')
         // ->get();
         ->join('grupos', 'proyectos.idgrupo', '=', 'grupos.id')
-        ->select('proyectos.*','grupos.grupos','grupos.turno')
+        ->join('salones', 'proyectos.idsalones', '=', 'salones.id')
+        ->join('evaluadores', 'proyectos.idevaluador', '=', 'evaluadores.id')
+        ->select('proyectos.*','grupos.grupos','salones.salon','evaluadores.nombres')
         ->get();
         return view('proyectos.index',['proyectos'=>$proyectos]);
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -84,7 +86,8 @@ class ProyectosController extends Controller
      */
     public function edit($id)
     {
-        //
+      // $proyectos = DB::table('proyectos')->were($id)
+      return view('proyectos.edit',['proyectos'=> Proyectos::find($id)]);
     }
 
     /**
@@ -96,7 +99,18 @@ class ProyectosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $proyecto =  Proyectos::findOrFail($id);
+      $proyecto->nombre_proyecto = $request->get('nproyecto');
+      $proyecto->memoria = $request->get('memoria');
+      $proyecto->fecha = $request->get('fecha');
+      $proyecto->horario_expo = $request->get('horario');
+      $proyecto->promedio = $request->get('promedio');
+      $proyecto->descripcion = $request->get('descripcion');
+      $proyecto->idgrupo = $request->get('grupo');
+      $proyecto->idsalones = $request->get('salon');
+      $proyecto->idevaluador = $request->get('evaluador');
+      $proyecto->update();
+      return Redirect::to('Proyectos');
     }
 
     /**
@@ -107,6 +121,12 @@ class ProyectosController extends Controller
      */
     public function destroy($id)
     {
-        //
+      // delete
+       $nerd = Proyectos::find($id);
+       $nerd->delete();
+
+       // redirect
+       Session::flash('message', 'Successfully deleted the nerd!');
+       return Redirect::to('Proyectos');
     }
 }

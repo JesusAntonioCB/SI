@@ -27,7 +27,7 @@
                   <td>{{$salon->salon}}</td>
                   <td>{{$salon->edificio}}</td>
                   <td>
-                     <button class="btn btn-primary btn-circle"> <i class="material-icons ">create</i></button>
+                     <a href="{{URL::action('SalonesController@edit',$salon->id)}}"><button class="btn btn-primary btn-circle"> <i class="material-icons">create</i></button></a>
                      <button class="btn btn-danger btn-circle"> <i class="material-icons">delete</i></button>
                   </td>
                 </tr>

@@ -66,7 +66,7 @@ class EvaluadoresController extends Controller
      */
     public function edit($id)
     {
-        //
+      return view('evaluadores.edit',['evaluadores'=> Evaluadores::find($id)]);
     }
 
     /**
@@ -78,7 +78,13 @@ class EvaluadoresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $Evaluador = Evaluadores::findOrFail($id);
+      $Evaluador->nombres = $request->get('nevaluador');
+      $Evaluador->ap_paterno = $request->get('apevaluador');
+      $Evaluador->ap_materno = $request->get('amevaluador');
+      $Evaluador->especialidad = $request->get('especialidad');
+      $Evaluador->update();
+      return Redirect::to('Evaluadores');
     }
 
     /**

@@ -66,7 +66,7 @@ class GruposController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('grupos.edit',['grupos'=> Grupo::find($id)]);
     }
 
     /**
@@ -78,7 +78,14 @@ class GruposController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $grupos =  Grupo::findOrFail($id);
+      $grupos->grupos = $request->get('ngrupo');
+      $grupos->turno = $request->get('turno');
+      $grupos->estado = "Activo";
+      // $dt = date('Y-m-d H:i:s');
+      // $grupos->created_at =$dt;
+      $grupos->update();
+      return Redirect::to('Grupos');
     }
 
     /**

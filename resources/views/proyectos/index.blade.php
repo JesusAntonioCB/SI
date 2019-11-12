@@ -16,6 +16,7 @@
             <table class="table">
               <thead>
                 <tr>
+                  <th>ID</th>
                   <th>Proyecto</th>
                   <th>Descripcion</th>
                   <th>Promedio</th>
@@ -29,9 +30,10 @@
                 </tr>
               </thead>
               <tbody>
-                {{dd($proyectos)}}
+
                 @foreach($proyectos as $proyecto)
                 <tr>
+                  <td>{{$proyecto->id}}</td>
                   <td>{{$proyecto->nombre_proyecto}}</td>
                   <td>{{$proyecto->descripcion}}</td>
                   <td>{{$proyecto->promedio}}</td>
@@ -42,8 +44,8 @@
                   <td>{{$proyecto->horario_expo}}</td>
                   <td>{{$proyecto->memoria}}</td>
                   <td>
-                    <button class="btn btn-primary btn-circle"> <i class="material-icons">create</i></button>
-                    <button class="btn btn-danger btn-circle"> <i class="material-icons">delete</i></button>
+                    <a href="{{URL::action('ProyectosController@edit',$proyecto->id)}}"><button class="btn btn-primary btn-circle"> <i class="material-icons">create</i></button></a>
+                    <a href="{{URL::action('ProyectosController@destroy',$proyecto->id)}}"><button class="btn btn-danger btn-circle"> <i class="material-icons">delete</i></button></a>
                   </td>
                 </tr>
                 @endforeach

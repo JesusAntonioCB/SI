@@ -65,7 +65,7 @@ class SalonesController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('salones.edit',['salones'=> Salones::find($id)]);
     }
 
     /**
@@ -77,7 +77,12 @@ class SalonesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $salon = Salones::findOrFail($id);
+      $salon->salon = $request->get('nsalon');
+      $salon->edificio = $request->get('edificio');
+      $salon->idgrupo = $request->get('grupo');
+      $salon->update();
+      return Redirect::to('Salones');
     }
 
     /**

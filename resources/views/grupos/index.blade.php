@@ -29,7 +29,7 @@
                   <td>{{$grupo->turno}}</td>
                   <td>{{$grupo->estado}}</td>
                   <td>
-                     <button class="btn btn-primary btn-circle"> <i class="material-icons">create</i></button>
+                     <a href="{{URL::action('GruposController@edit',$grupo->id)}}"><button class="btn btn-primary btn-circle"> <i class="material-icons">create</i></button></a>
                   {{   Form::open([ 'method'  => 'POST', 'url' => [ 'grupos', $grupo->id ] ]) }}
                          {{method_field('DELETE')}}
                       <input type="submit" class="btn btn-danger" value="Delete"/>
