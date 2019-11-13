@@ -30,7 +30,7 @@
             </select>
           </div>
           <div class="form-line">
-            <button type="submit" class="btn btn-primary">Crear</button>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
           </div>
         </div>
       </div>

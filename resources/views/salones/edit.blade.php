@@ -5,8 +5,10 @@
         <h2>Registrar Nuevo Salon</h2>
       </div>
     </div>
-    {!!Form::open(array('url'=> 'Salones',
-    'method' => 'POST')) !!}
+    {!!Form::model($salones,[
+      'method' => 'PATCH',
+      'route' => ['Salones.update',$salones->id
+      ]]) !!}
 <div class="card">
   <div class="body card-body">
     <h2 class="card-inside-title">
@@ -17,11 +19,11 @@
         <div class="form-goup">
           <div class="form-line">
             <label>Nombre del Salon</label>
-            <input id="nsalon" class="form-group" type="text" name="nsalon" placeholder="Nombre del Salon" value="">
+            <input id="nsalon" class="form-group" type="text" name="nsalon" placeholder="Nombre del Salon" value="{{$salones->salon}}">
           </div>
           <div class="form-line">
             <label>Nombre del Edificio</label>
-            <input class="form-group" type="text" name="edificio" placeholder="Nombre del Edificio" value="">
+            <input class="form-group" type="text" name="edificio" placeholder="Nombre del Edificio" value="{{$salones->edificio}}">
           </div>
           <div class="form-line">
             <label>Grupo</label>
@@ -30,7 +32,7 @@
             </select>
           </div>
           <div class="form-line">
-            <button type="submit" class="btn btn-primary">Crear</button>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
           </div>
         </div>
       </div>

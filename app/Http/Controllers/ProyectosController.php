@@ -86,8 +86,15 @@ class ProyectosController extends Controller
      */
     public function edit($id)
     {
-      // $proyectos = DB::table('proyectos')->were($id)
-      return view('proyectos.edit',['proyectos'=> Proyectos::find($id)]);
+      $grupos = DB::table('grupos')->get();
+      $salones = DB::table('salones')->get();
+      $evaluadores = DB::table('evaluadores')->get();
+      return view('proyectos.edit',[
+        'proyectos'=> Proyectos::find($id),
+        'grupos'=>$grupos,
+        'salones'=>$salones,
+        'evaluadores'=>$evaluadores
+      ]);
     }
 
     /**
