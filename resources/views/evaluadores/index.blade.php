@@ -23,14 +23,15 @@
               </thead>
               <tbody>
                 @foreach($evaluadores as $evaluador)
-                <tr>
-                  <td>{{$evaluador->nombres}} {{$evaluador->ap_paterno}} {{$evaluador->ap_materno}}</td>
-                  <td>{{$evaluador->especialidad}}</td>
-                  <td>
-                    <a href="{{URL::action('EvaluadoresController@edit',$evaluador->id)}}"><button class="btn btn-primary btn-circle"> <i class="material-icons">create</i></button></a>
-                    <button class="btn btn-danger btn-circle"> <i class="material-icons">delete</i></button>
-                  </td>
-                </tr>
+                  <tr>
+                    <td>{{$evaluador->nombres}} {{$evaluador->ap_paterno}} {{$evaluador->ap_materno}}</td>
+                    <td>{{$evaluador->especialidad}}</td>
+                    <td>
+                      <a href="{{URL::action('EvaluadoresController@edit',$evaluador->id)}}"><button class="btn btn-primary btn-circle"> <i class="material-icons">create</i></button></a>
+                      <button class="btn btn-danger btn-circle" data-toggle="modal" data-target="#exampleModal{{$evaluador->id}}"> <i class="material-icons">delete</i></button>
+                    </td>
+                  </tr>
+                  @include('evaluadores.modal', ['evaluador' => $evaluador])
                 @endforeach
               </tbody>
             </table>

@@ -27,8 +27,14 @@
           </div>
           <div class="form-line">
             <label>Grupo</label>
-            <select class="form-control" name="grupo">
-
+            <select class="form-control"  name="grupo">
+              @foreach($grupos as $grupo)
+              <?php if ($grupo->id == $salones->idgrupo): ?>
+                  <option value="{{$grupo->id}}" selected="selected" >{{$grupo->grupos}}</option>
+                <?php else: ?>
+                  <option value="{{$grupo->id}}">{{$grupo->grupos}}</option>
+              <?php endif; ?>
+              @endforeach
             </select>
           </div>
           <div class="form-line">

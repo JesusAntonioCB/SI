@@ -23,14 +23,15 @@
               </thead>
               <tbody>
                 @foreach($salones as $salon)
-                <tr>
-                  <td>{{$salon->salon}}</td>
-                  <td>{{$salon->edificio}}</td>
-                  <td>
-                     <a href="{{URL::action('SalonesController@edit',$salon->id)}}"><button class="btn btn-primary btn-circle"> <i class="material-icons">create</i></button></a>
-                     <button class="btn btn-danger btn-circle"> <i class="material-icons">delete</i></button>
-                  </td>
-                </tr>
+                  <tr>
+                    <td>{{$salon->salon}}</td>
+                    <td>{{$salon->edificio}}</td>
+                    <td>
+                       <a href="{{URL::action('SalonesController@edit',$salon->id)}}"><button class="btn btn-primary btn-circle"> <i class="material-icons">create</i></button></a>
+                       <button class="btn btn-danger btn-circle" data-toggle="modal" data-target="#exampleModal{{$salon->id}}"> <i class="material-icons">delete</i></button>
+                    </td>
+                  </tr>
+                  @include('salones.modal', ['salon' => $salon])
                 @endforeach
               </tbody>
             </table>

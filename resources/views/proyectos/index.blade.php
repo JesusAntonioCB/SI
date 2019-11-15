@@ -32,22 +32,23 @@
               <tbody>
 
                 @foreach($proyectos as $proyecto)
-                <tr>
-                  <td>{{$proyecto->id}}</td>
-                  <td>{{$proyecto->nombre_proyecto}}</td>
-                  <td>{{$proyecto->descripcion}}</td>
-                  <td>{{$proyecto->promedio}}</td>
-                  <td>{{$proyecto->grupos}}</td>
-                  <td>{{$proyecto->salon}}</td>
-                  <td>{{$proyecto->nombres}}</td>
-                  <td>{{$proyecto->fecha}}</td>
-                  <td>{{$proyecto->horario_expo}}</td>
-                  <td>{{$proyecto->memoria}}</td>
-                  <td>
-                    <a href="{{URL::action('ProyectosController@edit',$proyecto->id)}}"><button class="btn btn-primary btn-circle"> <i class="material-icons">create</i></button></a>
-                    <a href="{{URL::action('ProyectosController@destroy',$proyecto->id)}}"><button class="btn btn-danger btn-circle"> <i class="material-icons">delete</i></button></a>
-                  </td>
-                </tr>
+                  <tr>
+                    <td>{{$proyecto->id}}</td>
+                    <td>{{$proyecto->nombre_proyecto}}</td>
+                    <td>{{$proyecto->descripcion}}</td>
+                    <td>{{$proyecto->promedio}}</td>
+                    <td>{{$proyecto->grupos}}</td>
+                    <td>{{$proyecto->salon}}</td>
+                    <td>{{$proyecto->nombres}}</td>
+                    <td>{{$proyecto->fecha}}</td>
+                    <td>{{$proyecto->horario_expo}}</td>
+                    <td>{{$proyecto->memoria}}</td>
+                    <td>
+                      <a href="{{URL::action('ProyectosController@edit',$proyecto->id)}}"><button class="btn btn-primary btn-circle"> <i class="material-icons">create</i></button></a>
+                      <button class="btn btn-danger btn-circle" data-toggle="modal" data-target="#exampleModal{{$proyecto->id}}"> <i class="material-icons">delete</i></button>
+                    </td>
+                  </tr>
+                  @include('proyectos.modal', ['proyecto' => $proyecto])
                 @endforeach
               </tbody>
             </table>

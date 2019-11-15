@@ -24,19 +24,16 @@
               </thead>
               <tbody>
                 @foreach($grupos as $grupo)
-                <tr>
-                  <td>{{$grupo->grupos}}</td>
-                  <td>{{$grupo->turno}}</td>
-                  <td>{{$grupo->estado}}</td>
-                  <td>
-                     <a href="{{URL::action('GruposController@edit',$grupo->id)}}"><button class="btn btn-primary btn-circle"> <i class="material-icons">create</i></button></a>
-                  {{   Form::open([ 'method'  => 'POST', 'url' => [ 'grupos', $grupo->id ] ]) }}
-                         {{method_field('DELETE')}}
-                      <input type="submit" class="btn btn-danger" value="Delete"/>
-                     {{ Form::close() }}
-                     <button class="btn btn-danger btn-circle"> <i class="material-icons">delete</i></button>
-                  </td>
-                </tr>
+                  <tr>
+                    <td>{{$grupo->grupos}}</td>
+                    <td>{{$grupo->turno}}</td>
+                    <td>{{$grupo->estado}}</td>
+                    <td>
+                       <a href="{{URL::action('GruposController@edit',$grupo->id)}}"><button class="btn btn-primary btn-circle"> <i class="material-icons">create</i></button></a>
+                       <button class="btn btn-danger btn-circle" data-toggle="modal" data-target="#exampleModal{{$grupo->id}}"> <i class="material-icons">delete</i></button>
+                    </td>
+                  </tr>
+                  @include('grupos.modal', ['grupo' => $grupo])
                 @endforeach
               </tbody>
             </table>
