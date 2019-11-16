@@ -96,12 +96,15 @@ class GruposController extends Controller
      */
     public function destroy($id)
     {
-      // delete
-       $nerd = Grupo::find($id);
-       $nerd->delete();
+      $grupos =  Grupo::findOrFail($id);
+      $grupos->estado = "Inactivo";
+      $grupos->update();
+      // FUNCIONA!!!!!!
+       // $grupo = Grupo::findOrFail($id);
+       // $grupo->destroy();
 
        // redirect
-       Session::flash('message', 'Successfully deleted the nerd!');
-       return Redirect::to('Grupos');
+       // Session::flash('message', 'Successfully deleted the grupo!');
+      return Redirect::to('Grupos');
     }
 }
